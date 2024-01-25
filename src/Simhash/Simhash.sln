@@ -1,11 +1,10 @@
-﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimhashTests", "SimhashTests\SimhashTests.csproj", "{A250BCCC-0054-48E1-96A6-474E20EC25F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimhashTests", "SimhashTests\SimhashTests.csproj", "{A250BCCC-0054-48E1-96A6-474E20EC25F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimhashLib", "SimhashLib\SimhashLib.csproj", "{0CA5067A-890E-4539-8658-7425F46EF2BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SimhashLib", "SimhashLib\SimhashLib.csproj", "{0CA5067A-890E-4539-8658-7425F46EF2BF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,5 +33,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A5A2C93-C122-4C41-8403-4228A2CDA0E9}
 	EndGlobalSection
 EndGlobal
