@@ -1,5 +1,9 @@
 simhash-csharp
 =================
+**Upgraded to .NET 8.0**
+
+Forked from [mrvancil/simhash-sharp](https://github.com/mrvancil/simhash-csharp)
+
 This is a C# port of a very clear and concise simhash implementation in python 
 (also on github at https://github.com/liangsun/simhash).  I have ported most all 
 of the tests as well, adding a couple of other along the way. The port is pretty 
@@ -8,9 +12,7 @@ for calculation because I prefer this approach.
 
 ## Getting Started 
 
-This project was written using Visual Studio 2015. ~~In keeping with the *clean* implementation
-there are no other external dependencies to build.~~  There is an external (nuget) dependency 
-on hashing algorithms, System.Data.HashFunction.Core, System.Data.HashFunction.Interfaces,
+There is an external (nuget) dependency on hashing algorithms, System.Data.HashFunction.Core, System.Data.HashFunction.Interfaces,
 and System.Data.HashFunction.Jenkins .  Jenkins, MurMur and FNV seem to be the most popular
 for hashing the feature set.  The default in this library is Jenkins (you can specify bit length
 of 64) but there is also an MD5 implementation (not recommended due to BigInteger messypants).
@@ -34,19 +36,14 @@ to generate fingerprints for 11,000 full text articles.
 It takes roughly 15 seconds to calculate the hamming distance for all the articles against
 those 11,000 fingerprints (still on the smallish laptop).  
 
-## Database Backends
-
-Work is currenly underway to implement multiple backend providers with this code.  This will
-mimic the concepts around another popular simhash library (https://github.com/seomoz/simhash-db-py).
-
 ## Future Work
 
-Database backends (Redis, HBase, Sql, Mongo)
-Nuget Submission
-Interfaces
-Alternate Hashing Functions
-More test coverage
-Ensure the Converters are up-to-snuff.
+- Database backends (Redis, HBase, Sql, Mongo) - this will mimic the concepts around another popular simhash library (https://github.com/seomoz/simhash-db-py)
+- Nuget Submission
+- Interfaces
+- Alternate Hashing Functions
+- More test coverage
+- Ensure the Converters are up-to-snuff.
 
 
 
