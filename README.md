@@ -1,4 +1,4 @@
-simhash-csharp
+SimHash-DotNet
 =================
 **Upgraded to .NET 8.0**
 
