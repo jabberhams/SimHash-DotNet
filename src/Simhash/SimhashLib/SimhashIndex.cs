@@ -64,15 +64,14 @@ namespace SimhashLib
             foreach (string key in get_keys(simhash))
             {
                 string v = string.Format("{0},{1}", simhash.value, obj_id);
-                if (!bucket.ContainsKey(key))
+                if (bucket.TryGetValue(key, out HashSet<string> value))
                 {
-                    var bucketHashSet = new HashSet<string>() { v };
-                    bucket.Add(key, bucketHashSet);
+                    value.Add(v);
                 }
                 else
                 {
-                    var values = bucket[key];
-                    values.Add(v);
+                    var bucketHashSet = new HashSet<string>() { v };
+                    bucket.Add(key, bucketHashSet);
                 }
             }
         }
