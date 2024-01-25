@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.HashFunction;
+using System.Data.HashFunction.Jenkins;
 using System.Globalization;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -151,10 +152,10 @@ namespace SimhashLib
 
         public ulong hashfuncjenkins(string x)
         {
-            var jenkinsLookup3 = new JenkinsLookup3(64);
+            IJenkinsLookup3 jenkinsLookup3 = JenkinsLookup3Factory.Instance.Create(new JenkinsLookup3Config() { HashSizeInBits = 64 });
             var resultBytes = jenkinsLookup3.ComputeHash(x);
 
-            var y = BitConverter.ToUInt64(resultBytes,0);
+            var y = BitConverter.ToUInt64(resultBytes.Hash,0);
 
             return y;
         }
