@@ -35,7 +35,7 @@ namespace SimhashLib
             return a list of obj_id, which is in type of long (for now)
             */
             if (simhash.fpSize != this.fpSize) throw new Exception();
-            
+
             var ans = new HashSet<long>();
 
             foreach (string key in get_keys(simhash))
@@ -115,17 +115,17 @@ namespace SimhashLib
                 int off;
                 if (i == (offsets.Count - 1))
                 {
-                    off = (fpSizeStatic - offsets[i]);
+                    off = fpSizeStatic - offsets[i];
                 }
                 else
                 {
                     off = offsets[i + 1] - offsets[i];
                 }
 
-                double m = (Math.Pow(2, off)) - 1;
+                double m = Math.Pow(2, off) - 1;
                 ulong m64 = Convert.ToUInt64(m);
                 ulong offset64 = Convert.ToUInt64(offsets[i]);
-                ulong c = simhash.value >> offsets[i] & m64;
+                ulong c = (simhash.value >> offsets[i]) & m64;
 
                 yield return string.Format("{0},{1}", c, i);
             }

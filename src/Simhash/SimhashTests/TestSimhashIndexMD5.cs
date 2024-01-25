@@ -1,16 +1,15 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimhashLib;
+using System.Collections.Generic;
 
 namespace SimhashTests
 {
     [TestClass]
     public class TestSimhashIndexMD5
     {
-        private Dictionary<long, Simhash> objs = new Dictionary<long, Simhash>();
+        private readonly Dictionary<long, Simhash> objs = new Dictionary<long, Simhash>();
         private SimhashIndex index;
-        private Dictionary<long, string> testData = new Dictionary<long, string>();
+        private readonly Dictionary<long, string> testData = new Dictionary<long, string>();
         [TestInitialize]
         public void setUp()
         {
@@ -19,15 +18,15 @@ namespace SimhashTests
             testData.Add(3, "This is simhash test.");
             testData.Add(4, "How are you i am fine. blar blar blar blar blar thank1");
 
-            foreach(var it in testData)
+            foreach (var it in testData)
             {
-                var simHash = new Simhash(hashingType:Simhash.HashingType.MD5);
+                var simHash = new Simhash(hashingType: Simhash.HashingType.MD5);
                 simHash.GenerateSimhash(it.Value);
                 objs.Add(it.Key, simHash);
-                
+
             }
             index = new SimhashIndex(objs: objs, k: 10);
-           
+
         }
         [TestMethod]
         public void test_offset_creation_with_ten()
@@ -59,7 +58,7 @@ namespace SimhashTests
             Dictionary<long, Simhash> simHashObjs = new Dictionary<long, Simhash>();
             foreach (var it in testdata)
             {
-                var simHash = new Simhash(hashingType:Simhash.HashingType.MD5);
+                var simHash = new Simhash(hashingType: Simhash.HashingType.MD5);
                 simHash.GenerateSimhash(it.Value);
                 simHashObjs.Add(it.Key, simHash);
             }

@@ -1,6 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimhashLib;
+using System;
 
 namespace SimhashTests
 {
@@ -34,7 +34,7 @@ namespace SimhashTests
             //retrieve from db and then get back to ulong
             string sLong = Convert.ToString(cLong, 2);
             ulong fromDb = Convert.ToUInt64(sLong, 2);
-           
+
             Assert.AreEqual(theUlong, fromDb);
         }
 

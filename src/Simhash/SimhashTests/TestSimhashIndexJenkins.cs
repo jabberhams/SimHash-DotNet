@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SimhashLib;
+using System.Collections.Generic;
 
 namespace SimhashTests
 {
@@ -9,7 +8,7 @@ namespace SimhashTests
     public class TestSimhashIndexJenkins
     {
         //1=14473962, 2=14454106, 3=14454124, 4=14454110
-        private Dictionary<long, string> testData = new Dictionary<long, string>();
+        private readonly Dictionary<long, string> testData = new Dictionary<long, string>();
         [TestInitialize]
         public void setUp()
         {

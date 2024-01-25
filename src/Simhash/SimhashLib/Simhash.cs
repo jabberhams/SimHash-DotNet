@@ -12,7 +12,8 @@ namespace SimhashLib
 
     public class Simhash
     {
-        public enum HashingType {
+        public enum HashingType
+        {
             MD5,
             Jenkins
         }
@@ -45,11 +46,11 @@ namespace SimhashLib
         }
 
         //playing around with hashing algorithms. turns out md5 is a touch slow.
-        private HashingType hashAlgorithm = HashingType.Jenkins;
+        private readonly HashingType hashAlgorithm = HashingType.Jenkins;
 
         public void GenerateSimhash(List<string> features)
         {
-            switch(hashAlgorithm)
+            switch (hashAlgorithm)
             {
                 case HashingType.MD5:
                     build_by_features_md5(features);
@@ -96,7 +97,7 @@ namespace SimhashLib
 
             value = makeFingerprint(v, masks);
         }
-       
+
         private void build_by_features_md5(List<string> features)
         {
             int[] v = setupFingerprint();
@@ -155,7 +156,7 @@ namespace SimhashLib
             IJenkinsLookup3 jenkinsLookup3 = JenkinsLookup3Factory.Instance.Create(new JenkinsLookup3Config() { HashSizeInBits = 64 });
             var resultBytes = jenkinsLookup3.ComputeHash(x);
 
-            var y = BitConverter.ToUInt64(resultBytes.Hash,0);
+            var y = BitConverter.ToUInt64(resultBytes.Hash, 0);
 
             return y;
         }
