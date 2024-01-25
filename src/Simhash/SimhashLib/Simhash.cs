@@ -172,12 +172,12 @@ namespace SimhashLib
             {
                 byte[] data = md5Hash.ComputeHash(Encoding.UTF8.GetBytes(x));
 
-                string returnString = "";
+                StringBuilder returnString = new();
                 for (int i = 0; i < data.Length; i++)
                 {
-                    returnString += data[i].ToString("x2");
+                    returnString.Append(data[i].ToString("x2"));
                 }
-                return returnString;
+                return returnString.ToString();
             }
         }
 
